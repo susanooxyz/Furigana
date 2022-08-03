@@ -119,7 +119,7 @@ def reading(src_text: str) -> str:
         if isinstance(token, ParseableToken):
             for out in mecab.translate(token):
                 substrings.append(
-                    format_output(out.word, out.hiragana_reading)
+                    format_output(out.word, out.hiragana_reading, config['ruby_tag'])
                     if out.katakana_reading and out.word not in skip_words and out.headword not in skip_words
                     else out.word
                 )

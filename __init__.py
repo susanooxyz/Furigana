@@ -8,6 +8,6 @@ from . import note_type, reading, bulkreading, context_menu, toolbar
 
 reading.init()
 bulkreading.init()
-note_type.init()
-context_menu.init()
+# note_type.init()
+# context_menu.init()
 toolbar.init()

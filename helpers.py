@@ -22,8 +22,17 @@ def get_default_config():
     addon = manager.addonFromModule(__name__)
     return manager.addonConfigDefaults(addon)
 
+def clean_furigana_ruby(expr: str) -> str:
+    kanjis = re.findall(r"<rb>(.*?)<\/rb>", expr)
+    for kanji in kanjis:
+        replacement = re.search(r"<ruby>.*?</ruby>", expr).group(0)
+        expr = expr.replace(replacement, kanji)
+    print(expr)
+    return expr
 
 def clean_furigana(expr: str) -> str:
+    if config['ruby_tag']:
+        return clean_furigana_ruby(expr)
     return re.sub(r'([^ ]+)\[[^ ]+]', r'\g<1>', expr, flags=RE_FLAGS).replace(' ', '')
 
 

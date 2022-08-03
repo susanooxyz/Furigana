@@ -14,6 +14,7 @@
       "destination": "VocabFurigana"
     }
   ],
+  "ruby_tag": true,
   "furigana_suffix": " (furigana)",
   "skip_numbers": true,
   "generate_on_note_add": true,
