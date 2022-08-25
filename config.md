@@ -15,6 +15,8 @@ and fields where the readings should be placed.
 Default field names match the
 [TSC](https://ankiweb.net/shared/info/1557722832)
 note type.
+* `ruby_tag`.
+Whether to use ruby-tag or not.
 * `furigana_suffix`.
 If a field called "abc" exists, and another field called "abc
 (furigana)" exists, they will be used as source and destination fields.
